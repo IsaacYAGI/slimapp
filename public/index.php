@@ -11,4 +11,9 @@
 
       return $response;
   });
+
+  //Costumers routes
+
+  require '../src/routes/customers.php';
+
   $app->run();
