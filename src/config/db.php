@@ -11,22 +11,22 @@
     private $dbname = "slimapp";
 
     public function getDbHost(){
-      return $this->$dbhost;
+      return $this->dbhost;
     }
     
     public function getDbUser(){
-      return $this->$dbuser;
+      return $this->dbuser;
     }
     public function getDbPass(){
-      return $this->$dbpass;
+      return $this->dbpass;
     }
     public function getDbName(){
-      return $this->$dbname;
+      return $this->dbname;
     }
 
 
     public function connect(){
-      $mysql_connect_str = "mysql:host=$this->getDbHost();dbname=$this->getDbName()";
+      $mysql_connect_str = "mysql:host=".$this->getDbHost().";dbname=".$this->getDbName();
       $dbConnection = new PDO($mysql_connect_str, $this->getDbUser(), $this->getDbPass());
       $dbConnection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
